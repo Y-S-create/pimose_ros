@@ -1,13 +1,7 @@
 sudo: required
 dist: trusty
-pip:
- - pip --version
- - make requirements
-install:
- - pip install -r requirements.txt
 before_script:
- - pip install -U pip
- - pip-compile --dry-run requirements.in | diff -u requirements.txt -
+ - pip freeze 
 script:
  - bash -xve ./test/travis_ros_install.bash
  - source ~/catkin_ws/devel/setup.bash
