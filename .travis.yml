@@ -1,5 +1,8 @@
 sudo: required
 dist: trusty
+pip:
+ - pip --version
+ - make requirements
 install:
  - pip install -r requirements.txt
 before_script:
